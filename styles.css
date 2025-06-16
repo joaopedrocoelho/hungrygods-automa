@@ -1,0 +1,242 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f0f0f0;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 20px 0;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.player-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.player-controls button {
+  padding: 5px 15px;
+  margin: 0;
+}
+
+#playerCount {
+  font-size: 20px;
+  font-weight: bold;
+  min-width: 30px;
+}
+
+#result {
+  font-size: 24px;
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  min-height: 50px;
+}
+
+.cards-container {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+}
+.player-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+}
+.player-cards {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+}
+
+.player-hand-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.card-button {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: left;
+  font-size: 2rem;
+  color: #333;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid transparent;
+}
+
+.card-button.terra {
+  background-color: #e8f5e9;
+  border-color: #2e7d32;
+}
+
+.card-button.agua {
+  background-color: #e3f2fd;
+  border-color: #1565c0;
+}
+
+.card-button.sol {
+  background-color: #fff8e1;
+  border-color: #f57f17;
+}
+
+.card-button.morte {
+  background-color: #ffebee;
+  border-color: #c62828;
+}
+
+.card-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card-button:active {
+  transform: translateY(0);
+}
+
+.card-button.used {
+  opacity: 0.5;
+  pointer-events: none;
+  border-color: #999;
+}
+
+.player-title {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 1.2em;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #4caf50;
+}
+
+details {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+  padding: 20px;
+}
+
+summary {
+  cursor: pointer;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333;
+  padding: 10px;
+}
+
+summary:hover {
+  color: #4caf50;
+}
+
+.details-content {
+  padding: 20px;
+  border-top: 1px solid #ddd;
+  margin-top: 10px;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+
+.card-god {
+  font-weight: bold;
+  font-size: 1.2em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-details {
+  font-size: 0.9em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-details strong {
+  font-weight: bold;
+}
+
+.card-button.terra .card-details strong,
+.card-button.terra .card-details {
+  color: #2e7d32;
+}
+
+.card-button.agua .card-details strong,
+.card-button.agua .card-details {
+  color: #1565c0;
+}
+
+.card-button.sol .card-details strong,
+.card-button.sol .card-details {
+  color: #f57f17;
+}
+
+.card-button.morte .card-details strong,
+.card-button.morte .card-details {
+  color: #c62828;
+}
+
+.reset-section {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 2px solid #ddd;
+}
+
+.reset-button {
+  background-color: #dc3545;
+  font-size: 18px;
+  padding: 12px 30px;
+}
+
+.reset-button:hover {
+  background-color: #c82333;
+}
