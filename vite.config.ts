@@ -4,6 +4,6 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: "/hungrygods-automa/",
   plugins: [react(), tailwindcss()],
-  base: "/hungrygods-automa",
 });
