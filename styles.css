@@ -40,6 +40,17 @@ button:hover {
   margin: 0;
 }
 
+.player-controls button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.player-controls button:disabled:hover {
+  background-color: #cccccc;
+  transform: none;
+}
+
 #playerCount {
   font-size: 20px;
   font-weight: bold;
@@ -126,6 +137,11 @@ button:hover {
 .card-button.morte {
   background-color: #ffebee;
   border-color: #c62828;
+}
+
+.card-button.sabedoria {
+  background-color: #f3e5f5;
+  border-color: #7b1fa2;
 }
 
 .card-button:hover {
@@ -222,6 +238,11 @@ summary:hover {
 .card-button.morte .card-details strong,
 .card-button.morte .card-details {
   color: #c62828;
+}
+
+.card-button.sabedoria .card-details strong,
+.card-button.sabedoria .card-details {
+  color: #7b1fa2;
 }
 
 .reset-section {
