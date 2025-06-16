@@ -1,4 +1,4 @@
-import type { SpaceProps, spaceType } from "../../types/board";
+import type { SpaceProps } from "../../types/board";
 import ExtSpace from "./ExtSpace";
 import Ladrao from "./Ladrao";
 
@@ -57,4 +57,5 @@ const ExtBoard = () => (
     ))}
   </svg>
 );
+
 export default ExtBoard;
