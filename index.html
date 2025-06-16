@@ -1,39 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Card Game</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-
-<body>
-    <div class="container">
-        <div class="player-controls">
-            <h3>Players</h3>
-            <button onclick="decreasePlayers()">-</button>
-            <span id="playerCount">2</span>
-            <button onclick="increasePlayers()">+</button>
-            <button type="button" onclick="dealCards()">Deal Cards</button>
-        </div>
-
-        <details>
-            <summary>Random Direction and Steps</summary>
-            <div class="details-content">
-                <button onclick="generateRandom()">Generate Random</button>
-                <div id="result"></div>
-            </div>
-        </details>
-
-        <div id="cardsContainer" class="cards-container"></div>
-
-        <div class="reset-section">
-            <button class="reset-button" onclick="resetGame()">Reset Game</button>
-        </div>
-    </div>
-
-    <script type="module" src="deck.js"></script>
-</body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React + TS</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>

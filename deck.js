@@ -123,7 +123,40 @@ export const deck = [
     direction: "counter-clockwise",
     turns: 3,
   },
+  //sabedoria God
+  {
+    god: "sabedoria",
+    direction: "clockwise",
+    turns: 1,
+  },
+  {
+    god: "sabedoria",
+    direction: "counter-clockwise",
+    turns: 1,
+  },
+  {
+    god: "sabedoria",
+    direction: "clockwise",
+    turns: 2,
+  },
+  {
+    god: "sabedoria",
+    direction: "counter-clockwise",
+    turns: 2,
+  },
+  {
+    god: "sabedoria",
+    direction: "clockwise",
+    turns: 3,
+  },
+  {
+    god: "sabedoria",
+    direction: "counter-clockwise",
+    turns: 3,
+  },
 ];
+
+console.log(deck.length);
 
 let currentPlayers = 2;
 let shuffledDeck = [];
@@ -134,6 +167,7 @@ const godEmojis = {
   agua: "🌊",
   sol: "🌞",
   morte: "🦂",
+  sabedoria: "🌟",
 };
 
 const directionEmojis = {
@@ -153,6 +187,7 @@ function increasePlayers() {
   if (currentPlayers < 6) {
     currentPlayers++;
     updatePlayerCount();
+    updatePlayerButtons();
   }
 }
 
@@ -160,11 +195,24 @@ function decreasePlayers() {
   if (currentPlayers > 2) {
     currentPlayers--;
     updatePlayerCount();
+    updatePlayerButtons();
   }
 }
 
 function updatePlayerCount() {
   document.getElementById("playerCount").textContent = currentPlayers;
+}
+
+function updatePlayerButtons() {
+  const decreaseBtn = document.querySelector(
+    ".player-controls button:first-of-type"
+  );
+  const increaseBtn = document.querySelector(
+    ".player-controls button:nth-of-type(2)"
+  );
+
+  decreaseBtn.disabled = currentPlayers <= 2;
+  increaseBtn.disabled = currentPlayers >= 6;
 }
 
 function generateRandom() {
@@ -240,10 +288,18 @@ function dealCards() {
   const CARDS_PER_PLAYER = 5;
   playerHands = [];
 
+  // Ensure we have enough cards for all players
+  if (shuffledDeck.length < currentPlayers * CARDS_PER_PLAYER) {
+    console.error("Not enough cards in the deck!");
+    return;
+  }
+
+  // Deal exactly 5 cards to each player
   for (let i = 0; i < currentPlayers; i++) {
+    const startIndex = i * CARDS_PER_PLAYER;
     const playerCards = shuffledDeck.slice(
-      i * CARDS_PER_PLAYER,
-      (i + 1) * CARDS_PER_PLAYER
+      startIndex,
+      startIndex + CARDS_PER_PLAYER
     );
     playerHands.push(playerCards);
   }
@@ -265,3 +321,6 @@ window.decreasePlayers = decreasePlayers;
 window.generateRandom = generateRandom;
 window.dealCards = dealCards;
 window.resetGame = resetGame;
+
+// Initialize player buttons state
+updatePlayerButtons();
