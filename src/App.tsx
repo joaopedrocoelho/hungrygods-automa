@@ -93,7 +93,7 @@ function App() {
         />
 
         <RandomGenerator onGenerate={generateRandom} result={randomResult} />
-        <Board />
+        {/* <Board /> */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-5">
           {playerHands.map((hand, index) => (
             <PlayerHand
